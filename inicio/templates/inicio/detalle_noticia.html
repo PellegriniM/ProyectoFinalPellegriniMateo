@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+TennisWorld - Detalle Noticia
+{% endblock title_head %}
+
+{% block h1_header %}
+Detalle Noticia {{noticia.asunto}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Autor: {{noticia.autor}}</li>
+    <li>Asunto: {{noticia.asunto}}</li>
+    <li>Descripción: {{noticia.descripcion | safe}}</li>
+    <li>Creacion: {{noticia.fecha_creacion}}</li>
+    <li>Imagen: {{noticia.imagen}}</li>
+    
+</ul>
+{% endblock main %}
+

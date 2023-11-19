@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block title_head %}
+TennisWorld - Noticias
+{% endblock title_head %}
+
+
+{% block h1_header %}
+Noticias
+{% endblock h1_header %}
+
+
+{% block main %}
+<p>
+    <a href={% url "crear_noticia" %}>Crear Noticia</a>
+</p>
+<form action="">
+    <input type="text" name="asunto" placeholder="Partido, Raqueta...">
+    <input type="submit" value="Buscar">
+</form>
+
+{% if listado_de_noticias %}
+<ul>
+    {% for noticia in listado_de_noticias %}
+    <li>{{noticia}} | <a href={% url "actualizar_noticia" noticia.id%}>Actualizar</a> | <a href={% url "eliminar_noticia" noticia.id %}>Eliminar</a> | <a href={% url "detalle_noticia" noticia.id %}>Detalle</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron noticias.</p>
+{% endif %}
+{% endblock main %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Registro
+{% endblock title_head %}
+
+{% block encabezado %}
+<h1>Registro</h1>
+<form action={% url "registrarse" %} method="POST">
+    {% csrf_token %}
+    <div class='container d-flex justify-content-center'>
+        <table>
+            {{formulario_de_registro}}
+        </table>
+    </div>
+    <br>
+    <div class='container d-flex justify-content-center'>
+        <input type="submit" value="Registrarse" class='btn btn-secondary'>
+    </div>
+</form>
+<br>
+<div class="container text-center">
+    <p>Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar Sesión</a></p>
+</div>
+{% endblock encabezado %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Tennis World - Sobre Mi
+{% endblock title_head %}
+
+
+
+{% block h1_header %}
+Sobre Mi
+{% endblock h1_header %}
+
+
+
+{% block main %}
+{% load static %}
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src={% static "assets/img/PellegriniMateo.jpg" %}  alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Pellegrini Mateo</h2>
+                    <p>Argentina, Rosario<br>23 Años<br>Estudiante en Desarrollo de Software<br>Conocimientos en Python, Html, Css, MySql, C#</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}

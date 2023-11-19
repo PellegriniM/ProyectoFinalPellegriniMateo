@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title_head %}
+TennisWorld - Crear Noticia
+{% endblock title_head %}
+
+
+{% block h1_header %}
+Crear Noticia
+{% endblock h1_header %}
+
+
+{% block main %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{formulario.media}}
+    {{formulario}}
+    <input type="submit" value="Crear">
+
+</form>
+{% endblock main %}

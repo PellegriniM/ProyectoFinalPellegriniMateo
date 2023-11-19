@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+TennisWorld - Actualizar Noticia
+{% endblock title_head %}
+
+{% block h1_header %}
+Actualizar Noticia
+{% endblock h1_header %}
+
+{% block main %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{formulario.media}}
+    {{formulario}}
+    <input type="submit" value="Actualizar">
+
+</form>
+{% endblock main %}

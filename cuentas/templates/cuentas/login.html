@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Login
+{% endblock title_head %}
+
+{% block h1_header %}
+Login
+{% endblock h1_header %}
+
+{% block encabezado %}
+<h1>Login</h1>
+<form action={% url "login" %} method="POST">
+    {% csrf_token %}
+    <div class='container d-flex justify-content-center'>
+        <table>
+            {{formulario_de_login}}
+        </table>
+    </div>
+    <br>
+    <div class='container d-flex justify-content-center'>
+        <input type="submit" value="Iniciar Sesion" class='btn btn-secondary'>
+    </div>
+</form>
+<br>
+<div class="container text-center">
+    <p>No tienes una cuenta? <a href="{% url 'registrarse' %}">Registrarse</a></p>
+</div>
+{% endblock encabezado %}
